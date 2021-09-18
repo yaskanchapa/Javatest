@@ -26,12 +26,6 @@ public class UnitMake {
 		return ub1;
 	}
 
-	public List<UnitBean> 리스트담기(int i) {
-		List<UnitBean> 유닛리스트 = new ArrayList<UnitBean>();
-		유닛리스트.add(유닛설정());
-		System.out.println("유닛"+i+"의 정보가 리스트에 저장되었습니다.");
-		return 유닛리스트;
-	}
 
 	public void 유닛생성() {
 		System.out.println("유닛은 3마리까지 생성가능합니다.능력치는 랜덤부여됩니다.");
@@ -41,6 +35,14 @@ public class UnitMake {
 			리스트담기(i);
 		}
 		System.out.println("------------유닛생성이 완료되었습니다.------------");
+		}
+
+	public List<UnitBean> 리스트담기(int i) {
+		List<UnitBean> 유닛리스트 = new ArrayList<UnitBean>();
+		유닛리스트.add(유닛설정());
+		System.out.println("유닛"+i+"의 정보가 리스트에 저장되었습니다.");
+		System.out.println(유닛리스트);
+		return 유닛리스트;
 	}
 
 	public void 출력() {
