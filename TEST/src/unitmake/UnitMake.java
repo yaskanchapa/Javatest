@@ -17,7 +17,10 @@ public class UnitMake {
 		ub1.setAtk(랜덤숫자생성());
 		ub1.setDef(랜덤숫자생성());
 		ub1.setSp(랜덤숫자생성());
-		ub1.setTier(티어판별());
+		int atk = ub1.getAtk();
+		int def = ub1.getDef();
+		int sp = ub1.getSp();
+		ub1.setTier(티어판별(atk,def,sp));
 		return ub1;
 	}
 	public int 랜덤숫자생성() {
@@ -25,8 +28,8 @@ public class UnitMake {
 		rn = rd.nextInt(100);
 		return rn;
 	}
-	public String 티어판별() {
-		int avg = (유닛설정().getAtk()+유닛설정().getDef()+유닛설정().getSp())/3;
+	public String 티어판별(int atk, int def, int sp) {
+		int avg = (atk+ def+ sp)/3;
 		String 티어;
 		if(avg < 50) {
 			티어 = "E등급";
