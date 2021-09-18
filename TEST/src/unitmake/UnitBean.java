@@ -5,8 +5,15 @@ public class UnitBean {
 	private int atk;
 	private int def;
 	private int sp;
+	private String tier;
 
 
+	public String getTier() {
+		return tier;
+	}
+	public void setTier(String tier) {
+		this.tier = tier;
+	}
 	public String getName() {
 		return name;
 	}

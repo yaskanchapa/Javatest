@@ -7,19 +7,42 @@ import java.util.Scanner;
 
 //유닛을 생성하는 메소드가 담긴 클래스
 public class UnitMake {
+	Scanner sc = new Scanner(System.in);
+	Random rd = new Random();
 
 	public UnitBean 유닛설정() {
-		Scanner sc = new Scanner(System.in);
-		Random rd = new Random();
 
 		UnitBean ub1 = new UnitBean();
 		ub1.setName(sc.next());
-		ub1.setAtk(rd.nextInt(100));
-		ub1.setDef(rd.nextInt(100));
-		ub1.setSp(rd.nextInt(100));
+		ub1.setAtk(랜덤숫자생성());
+		ub1.setDef(랜덤숫자생성());
+		ub1.setSp(랜덤숫자생성());
+		ub1.setTier(티어판별());
 		return ub1;
 	}
-
+	public int 랜덤숫자생성() {
+		int rn;
+		rn = rd.nextInt(100);
+		return rn;
+	}
+	public String 티어판별() {
+		int avg = (유닛설정().getAtk()+유닛설정().getDef()+유닛설정().getSp())/3;
+		String 티어;
+		if(avg < 50) {
+			티어 = "E등급";
+		}else if(avg < 60) {
+			티어 = "D등급";
+		}else if(avg < 70) {
+			티어 = "C등급";
+		}else if(avg < 80) {
+			티어 = "B등급";
+		}else if(avg < 90) {
+			티어 = "A등급";
+		}else {
+			티어 = "S등급";
+		}
+		return 티어;
+	}
 	List<UnitBean> 유닛리스트 = new ArrayList<UnitBean>();
 	public List<UnitBean> 리스트담기() {
 		유닛리스트.add(유닛설정());
@@ -45,6 +68,7 @@ public class UnitMake {
 			System.out.println("공력력:" + 유닛빈.getAtk());
 			System.out.println("수비력:" + 유닛빈.getDef());
 			System.out.println("방어력:" + 유닛빈.getSp());
+			System.out.println("티어:" + 유닛빈.getTier());
 		}
 	}
 }
