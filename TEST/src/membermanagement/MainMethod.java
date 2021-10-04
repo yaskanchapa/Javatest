@@ -44,6 +44,7 @@ public class MainMethod {
 		//TODO 자식 레이아웃 [입력 부분] 생성
 		JTextField tfName = new JTextField(6); // 텍스트 입력 창 자리수 지정
 		JTextField tfAge = new JTextField(3); // 텍스트 입력 창 자리수 지정
+		JTextField tfAddress = new JTextField(20); // 텍스트 입력 창 자리수 지정
 		JRadioButton rb1 = new JRadioButton("남자");
 		JRadioButton rb2 = new JRadioButton("여자");
 		rb1.setSelected(true); // 초기 성별 선택 설정
@@ -54,6 +55,8 @@ public class MainMethod {
 		input_flow_panel.add(tfName);
 		input_flow_panel.add(new JLabel("나이"));
 		input_flow_panel.add(tfAge);
+		input_flow_panel.add(new JLabel("주소"));
+		input_flow_panel.add(tfAddress);
 		input_flow_panel.add(rb1);
 		input_flow_panel.add(rb2);
 		input_flow_panel.setBackground(Color.GRAY);
@@ -82,9 +85,11 @@ public class MainMethod {
 				// TODO Auto-generated method stub
 				if (e.getActionCommand().equals("추가")) { // 추가 버튼 클릭이벤트 처리
 					//TODO 입력된 값 테이블에 추가하기
-					String info[] = new String[3]; //한행 (row) 에 저장할 데이터 모음
+					String info[] = new String[4]; //한행 (row) 에 저장할 데이터 모음
 					info[0] = tfName.getText();
 					info[1] = tfAge.getText();
+					info[3] = tfAddress.getText();
+
 					if(rb1.isSelected()) {
 						info[2] = "남자";
 					}
@@ -96,6 +101,7 @@ public class MainMethod {
 					//TODO 입력후 텍스트 필드 값 제거
 					tfName.setText("");
 					tfAge.setText("");
+					tfAddress.setText("");
 					rb1.setSelected(true); //라디오 초기화
 					rb2.setSelected(false); //라디오 초기화
 				}
