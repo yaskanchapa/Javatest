@@ -1,4 +1,5 @@
-package member;
+package unitmanagement;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -17,10 +18,6 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 public class MainMethod {
-//		JFrame : GUI 프로그램만들기
-//		DefaultTableMode : 테이블 데이터 관리
-//		JTable : 테이블 생성
-//		JScrollPnae : 스크롤식 패널 생성
 	public static void main(String[] args) {
 		//[프레임생성]
 		JFrame frm = new JFrame("유닛정보관리툴");
@@ -75,7 +72,7 @@ public class MainMethod {
 		btn_flow_panel.add(add_btn);
 		btn_flow_panel.add(del_btn);
 		btn_flow_panel.setBackground(Color.LIGHT_GRAY);
-		btn_flow_panel.setBounds(0,400,500,100);
+		btn_flow_panel.setBounds(0,400,800,100);
 
 		//[버튼클릭이벤트]
 		ActionListener action = new ActionListener() {
@@ -157,7 +154,7 @@ public class MainMethod {
 	}
 
 	public static void setJFrameStyle(JFrame frame) {
-		frame.setSize(500,500);
+		frame.setSize(800,500);
 		frame.setBackground(Color.BLACK); // 백그라운드 색
 		frame.setLocationRelativeTo(null); //화면 가운데 배치
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 닫기시 메모리에서 제거 되도록설정
